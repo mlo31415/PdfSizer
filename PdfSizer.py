@@ -19,6 +19,6 @@ with open(os.path.join(os.getcwd(), "PDF sizes.txt"), "+w") as out:
         if fileparts[1] == ".pdf":
             if os.path.exists(filename):
                 with open(filename, 'rb') as fl:
-                    reader=PdfFileReader(fl)
+                    reader=PdfFileReader(fl, strict=False)
                     print(filename+":   "+str(reader.getNumPages()), file=out)
 
